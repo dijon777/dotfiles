@@ -1,8 +1,8 @@
 # vim: set ft=sh
 
 alias ...="cd ../.."
-alias ls='ls --color=auto'
-alias lsa='ls --color=auto -la'
+alias ls='ls -G'
+alias lsa='ls -G -la'
 
 alias g='git'
 
