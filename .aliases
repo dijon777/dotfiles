@@ -1,0 +1,20 @@
+# vim: set ft=sh
+
+alias ...="cd ../.."
+alias ls='ls -G -a'
+alias lsa='ls -G -la'
+
+alias g='git'
+
+alias tmux='tmux -u'
+alias t='tmux'
+
+if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
+  alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+	alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+fi
+
+alias say='say -v Samantha'
+alias psay='pbpaste | say -v Samantha'
+
+alias lsapp="ps aux | grep -v grep | grep Applications | grep -o -e 'MacOS\/.*' | awk '{print \$1}' | sed -e 's/MacOS\///'"

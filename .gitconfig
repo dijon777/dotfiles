@@ -1,0 +1,28 @@
+[core]
+	excludesfile = /Users/matsu/.gitignore
+  geditor = /usr/local/bin/vim
+	quotepath = false
+[user]
+	name = dijon777
+	email = dijon777@gmail.com
+[github]
+  user = dijon777
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[pack]
+	windowMemory = 256m
+[push]
+	default = matching
+[alias]
+	st = status
+	co = checkout
+	cm = commit
+  gst = status
+  gco = checkout
+  gcom = commit
+	adda = add --all
+  n  = now --all --stat

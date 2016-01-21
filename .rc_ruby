@@ -1,0 +1,4 @@
+# vim: ft=sh
+export GEM_EDITOR='vim'
+eval "$(rbenv init -)"
+PATH=$PATH:/Users/matsu/.rbenv/shims

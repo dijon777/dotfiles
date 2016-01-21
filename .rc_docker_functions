@@ -1,0 +1,65 @@
+# vim:ft=sh
+
+function dma() {
+  local args=("$@")
+  local shifted=("${args[@]:1}")
+  case "$1" in
+    "")
+      docker-machine
+    ;;
+    active | ls | help | h )
+      docker-machine ${args[@]}
+    ;;
+    eval)
+      local selected=$(docker-machine ls -q | fzf)
+      eval $(docker-machine env ${shifted[@]} $selected)
+    ;;
+    *)
+      local selected=$(docker-machine ls -q | fzf)
+      docker-machine ${args[@]} $selected
+    ;;
+  esac
+}
+
+function dco() {
+  local all="__ALL__"
+  local args=("$@")
+  local shifted=("${args[@]:1}")
+  case "$1" in
+    "")
+      docker-compose
+    ;;
+    version | ps | up) docker-compose ${args[@]} ;;
+    login)
+      local selected=$(docker-compose ps | awk 'NR > 2 {print $1}' | fzf)
+      if [[ "$selected" = "" ]]; then
+        echo "container is not found..."
+      else
+        docker exec -it $selected /bin/bash
+      fi
+    ;;
+    # rm )
+    #   local selected=$(docker-compose ps | \
+    #                    awk 'NR > 2 {print $1}' | \
+    #                    fzf_add_header $all | fzf)
+    #   if [[ "$selected" = "$all" ]]; then
+    #     docker-compose ${args[@]}
+    #   else
+    #     docker-compose ${args[@]} $selected
+    #   fi
+    # ;;
+    build | kill | start | stop | restart | scale | pause | unpause | logs | rm)
+      local selected=$(parse_yaml docker-compose.yml | awk -F'___' '{print $1}' | uniq |\
+                       fzf_add_header $all | fzf)
+      if [[ "$selected" = "$all" ]]; then
+        docker-compose ${args[@]}
+      else
+        docker-compose ${args[@]} $selected
+      fi
+    ;;
+    *)
+      local selected=$(docker-compose ps | awk 'NR > 2 {print $1}' | fzf)
+      docker-compose ${args[@]} $selected
+    ;;
+  esac
+}
