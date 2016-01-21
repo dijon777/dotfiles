@@ -1,6 +1,6 @@
 source ~/.bashrc
 
-source ~/.rc_docker
+"source ~/.rc_docker
 source ~/.rc_docker_functions
 
 export HISTCONTROL=ignoreboth
