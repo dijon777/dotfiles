@@ -1,0 +1,74 @@
+Host 188
+Hostname        1.33.188.144 
+IdentityFile    ~/.ssh/matsu.id_dsa
+User matsu
+
+Host h59
+Hostname        172.17.101.59
+User etcadmin
+
+#wwwdev.hyo-med.ac.jp
+Host hdev
+Hostname        211.12.18.27
+Port            2222
+ProxyCommand    ssh 188 -W %h:%p server
+User            matsu
+
+#hismovie.hyo-med.ac.jp
+Host hism
+Hostname        211.12.18.35
+Port            2222
+ProxyCommand    ssh 188 -W %h:%p server
+User            matsu
+
+#sip .hyo-med.ac.jp
+Host hsip
+Hostname        172.17.101.132
+ProxyCommand    ssh h59 -W %h:%p server
+User            matsu
+
+#incident
+Host inc
+Hostname        10.101.2.16
+ProxyCommand    ssh h59 -W %h:%p server
+User            root
+
+#hos-www.hyo-med.ac.jp
+Host hoswww
+Hostname        hos-www.hyo-med.ac.jp
+Port            2222
+ProxyCommand    ssh 188 -W %h:%p server
+User            matsu
+
+#his-beacon
+Host beacon
+Hostname				211.12.18.55
+Port            2222
+ProxyCommand    ssh 188 -W %h:%p server
+User            matsu
+
+#OSAREGirl
+Host osare
+Hostname        116.91.113.109
+Port            10022
+User            wspace
+
+#Live-onair
+Host iteachu
+Hostname        153.120.60.180
+User            wspace
+
+#Live-onair staging
+Host osare-st
+Hostname        153.120.62.46
+User            wspace
+
+#iteachu staging
+Host iteachu-st
+Hostname        128.199.238.42
+User            root
+
+#hapyson
+Host hapy
+Hostname        hapyson.sakura.ne.jp
+User            hapyson
