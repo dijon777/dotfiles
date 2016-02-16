@@ -16,8 +16,23 @@ set showmatch       " 括弧入力時の対応する括弧を表示
 set showmode        " モード表示
 set title           " 編集中のファイル名を表示
 set ruler           " ルーラーの表示
-"set list            " 不可視文字を表示する
-set listchars=eol:$,tab:>\ ,extends:< " 不可視文字の表示記号指定
+set list            " 不可視文字を表示する
+"set listchars=eol:$,tab:>\ ,extends:< " 不可視文字の表示記号指定
+set listchars=tab:>\ ,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
+set ambiwidth=double " 記号が半角でずれるのを防ぐ
+
+function! ZenkakuSpace() "全角スペースをハイライト表示
+    highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
+endfunction
+   
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        autocmd ColorScheme       * call ZenkakuSpace()
+        autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+    augroup END
+    call ZenkakuSpace()
+endif
 
 
 " カーソル移動関連
@@ -73,10 +88,63 @@ syntax enable
 syntax on           " カラー表示
 syntax sync minlines=200
 
-set background=dark
-let g:solarized_termcolors=256
-colorscheme BusyBee
+"set background=dark
+"let g:solarized_termcolors=256
+"colorscheme BusyBee
 "colorscheme molokai
+colorscheme lucius
 
 " fzfプラグイン
 set rtp+=~/.fzf
+
+" Note: Skip initialization for vim-tiny or vim-small.
+if 0 | endif
+
+filetype off
+
+if has('vim_starting')
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" originalrepos on github
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+    \ 'windows' : 'make -f make_mingw32.mak',
+    \ 'cygwin' : 'make -f make_cygwin.mak',
+    \ 'mac' : 'make -f make_mac.mak',
+    \ 'unix' : 'make -f make_unix.mak',
+  \ },
+  \ }
+NeoBundle 'VimClojure'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 't9md/vim-textmanip'
+
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'tomasr/molokai'
+
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'gregsexton/gitv'
+""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
+
+call neobundle#end()
+
+filetype plugin indent on     " required!
+filetype indent on
+syntax on
+
+NeoBundleCheck
