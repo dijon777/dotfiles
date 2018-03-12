@@ -2,6 +2,7 @@
 
 cp .functions_operation ..
 cp .bash_prompt ..
+cp .tmux.conf ..
 
 cp .aliases ../.aliases
 
