@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cp .functions_operation ..
+cp .bash_prompt ..
+
+cp .aliases ../.aliases
+
+cp .bashrc ../.bashrc
+cp .bash_profile ../.bash_profile
+#cp .gitignore ..
+#cp .rc_docker ..
+#cp .rc_docker_functions ..
+#cp .vimrc.out ../.vimrc
+
+source ~/.bash_profile

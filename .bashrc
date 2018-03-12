@@ -8,4 +8,14 @@ PATH=$PATH:$HOME/.rbenv/bin
 PATH=$PATH:$HOME/bin
 export PATH
 
+export GOPATH=$HOME/Documents/golang
+export GOROOT=`go env GOROOT`
+PATH=$PATH:$GOROOT:$GOPATH/bin
+
+export CDJ_DIR_MAP=(
+    hw   ~/Projects/Hapyson/src/Hapyson_web
+    cvs  ~/cvs
+    etc  /etc
+    );
+
 source ~/.aliases
