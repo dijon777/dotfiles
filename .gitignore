@@ -2,7 +2,7 @@
 
 !.gitkeep
 !.keep
-#.vim
+.vim
 .tmux
 
 # Exclude the build directory
