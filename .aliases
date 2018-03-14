@@ -1,4 +1,7 @@
 # vim: set ft=sh
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
 
 alias ...="cd ../.."
 

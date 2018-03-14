@@ -19,4 +19,4 @@ export CDJ_DIR_MAP=(
     etc  /etc
     );
 
-source ~/.aliases
+source $HOME/.aliases

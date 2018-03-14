@@ -1,4 +1,7 @@
-source ~/.bashrc
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
 
 #source ~/.rc_docker_functions
 source ~/.functions_operation

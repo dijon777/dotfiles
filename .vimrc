@@ -55,9 +55,10 @@ set visualbell      " ビープのかわりに画面フラッシュ
 set vb t_vb=        " ビープ無音
 
 " タブ関連
-" set expandtab       " タブの代わりに空白文字挿入
-set ts=2 sw=2 sts=0 " タブは半角4文字分のスペース
-set autoindent      " オートインデント
+set expandtab       " タブの代わりに空白文字挿入
+set ts=2 sw=2 sts=0 " タブは半角2文字分のスペース
+set shiftwidth=2    " インデントは半角2文字分のスペース
+" set autoindent      " オートインデント
 " set smartindent     " オートインデント
 set smarttab
 
