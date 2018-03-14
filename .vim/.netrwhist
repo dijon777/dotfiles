@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/dijon777/Projects/Hapyson/src'
+let g:netrw_dirhist_2='/Users/dijon777/Projects/Kyoto-u/foodmodel/src/docker/dev'
+let g:netrw_dirhist_3='/Users/dijon777/Projects/Hyomed/distributor/src/deploy'
+let g:netrw_dirhist_4='/Users/dijon777/Projects/Hyomed/distributor/src/docker/development'
+let g:netrw_dirhist_5='/Users/dijon777/Projects/Hyomed/distributor/src/distributor/distributor/admin/log'
+let g:netrw_dirhist_6='/Users/dijon777/Projects/Ncvc/lacrosse/src/lacrosse-django'
+let g:netrw_dirhist_7='/Users/dijon777/Projects/Hyomed/Incident/src/IncidentReport2/tmp'
