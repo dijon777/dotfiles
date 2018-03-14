@@ -8,9 +8,14 @@ cp .aliases ../.aliases
 
 cp .bashrc ../.bashrc
 cp .bash_profile ../.bash_profile
+cp .vimrc ../.vimrc
+
+if [ ! -d ../.vim ]; then
+    cp -r .vim ../.vim
+fi
+
 #cp .gitignore ..
 #cp .rc_docker ..
 #cp .rc_docker_functions ..
-#cp .vimrc.out ../.vimrc
 
 source ~/.bash_profile
