@@ -8,9 +8,11 @@ PATH=$PATH:$HOME/.rbenv/bin
 PATH=$PATH:$HOME/bin
 export PATH
 
-export GOPATH=$HOME/Documents/golang
-export GOROOT=`go env GOROOT`
-PATH=$PATH:$GOROOT:$GOPATH/bin
+if type go > /dev/null 2>&1; then
+    export GOPATH=$HOME/Documents/golang
+    export GOROOT=`go env GOROOT`
+    PATH=$PATH:$GOROOT:$GOPATH/bin
+fi
 
 export CDJ_DIR_MAP=(
     hw   ~/Projects/Hapyson/src/Hapyson_web
