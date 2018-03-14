@@ -14,6 +14,7 @@ PATH=$PATH:$GOROOT:$GOPATH/bin
 
 export CDJ_DIR_MAP=(
     hw   ~/Projects/Hapyson/src/Hapyson_web
+    jmp  ~/Projects/Hyomed/distributor/src/distributor-django/docker/development
     cvs  ~/cvs
     etc  /etc
     );
