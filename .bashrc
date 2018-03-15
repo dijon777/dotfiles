@@ -17,6 +17,8 @@ fi
 export CDJ_DIR_MAP=(
     hw   ~/Projects/Hapyson/src/Hapyson_web
     jmp  ~/Projects/Hyomed/distributor/src/distributor-django/docker/development
+    lrs  ~/Projects/Hyomed/e-lrs/src/elrs-django/docker/development
+    epl  ~/Documents/golang/src/github.com/winespace/e-plus-learning
     cvs  ~/cvs
     etc  /etc
     );

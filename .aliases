@@ -9,6 +9,7 @@ alias g='git'
 alias pwbt='echo "cxP97Bt" | pbcopy'
 alias pwha='echo "pbv2eetmb2" | pbcopy'
 
+alias gcver='git commit -m "バージョン変更"'
 
 alias tmux='tmux -u'
 alias t='tmux'
