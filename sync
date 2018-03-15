@@ -5,6 +5,7 @@ cp .bash_prompt ..
 cp .tmux.conf ..
 
 cp .aliases ../.aliases
+cp .ssh_config ../.ssh/config
 
 cp .bashrc ../.bashrc
 cp .bash_profile ../.bash_profile

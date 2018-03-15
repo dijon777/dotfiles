@@ -1,3 +1,17 @@
+PubkeyAcceptedKeyTypes=+ssh-dss
+AddKeysToAgent yes
+UseKeychain yes
+
+Host bt
+Hostname        160.16.102.219
+IdentityFile    ~/.ssh/matsu.id_dsa
+User wspace
+
+Host sbt
+Hostname        128.199.250.79
+IdentityFile    ~/.ssh/matsu.id_dsa
+User wspace
+
 Host 188
 Hostname        1.33.188.144 
 IdentityFile    ~/.ssh/matsu.id_dsa
@@ -14,13 +28,6 @@ Port            2222
 ProxyCommand    ssh 188 -W %h:%p server
 User            matsu
 
-#hismovie.hyo-med.ac.jp
-Host hism
-Hostname        211.12.18.35
-Port            2222
-ProxyCommand    ssh 188 -W %h:%p server
-User            matsu
-
 #sip .hyo-med.ac.jp
 Host hsip
 Hostname        172.17.101.132
@@ -31,6 +38,12 @@ User            matsu
 Host inc
 Hostname        10.101.2.16
 ProxyCommand    ssh h59 -W %h:%p server
+User            root
+
+#incident-st
+Host inc-st
+Hostname        inctest.qpit.me
+IdentityFile    ~/.ssh/matsu.id_dsa
 User            root
 
 #hos-www.hyo-med.ac.jp
@@ -47,28 +60,40 @@ Port            2222
 ProxyCommand    ssh 188 -W %h:%p server
 User            matsu
 
-#OSAREGirl
-Host osare
-Hostname        116.91.113.109
-Port            10022
-User            wspace
-
-#Live-onair
-Host iteachu
-Hostname        153.120.60.180
-User            wspace
-
-#Live-onair staging
-Host osare-st
-Hostname        153.120.62.46
-User            wspace
-
-#iteachu staging
-Host iteachu-st
-Hostname        128.199.238.42
-User            root
-
 #hapyson
 Host hapy
 Hostname        hapyson.sakura.ne.jp
 User            hapyson
+
+#gcloud
+Host cho-st
+Hostname        104.155.234.100
+Port            22
+ProxyCommand    ssh 188 -W %h:%p server
+IdentityFile    ~/.ssh/matsu.id_dsa
+User            matsu
+
+Host sixp
+Hostname        128.199.169.103
+IdentityFile    ~/.ssh/matsu.id_dsa
+User sixp
+
+Host epl
+Hostname        139.59.229.96
+IdentityFile    ~/.ssh/matsu.id_dsa
+User root
+
+Host lrs
+Hostname        188.166.180.9
+IdentityFile    ~/.ssh/matsu.id_dsa
+User root
+
+# --- Sourcetree Generated ---
+Host dijon777-GitHub
+	HostName github.com
+	User dijon777
+	PreferredAuthentications publickey
+	IdentityFile /Users/dijon777/.ssh/dijon777-GitHub
+	UseKeychain yes
+	AddKeysToAgent yes
+# ----------------------------
