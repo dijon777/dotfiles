@@ -88,6 +88,11 @@ Hostname        188.166.180.9
 IdentityFile    ~/.ssh/matsu.id_dsa
 User root
 
+Host gaia
+Hostname        gaia.huhs.ac.jp
+IdentityFile    ~/.ssh/matsu.id_dsa
+User btend
+
 # --- Sourcetree Generated ---
 Host dijon777-GitHub
 	HostName github.com
