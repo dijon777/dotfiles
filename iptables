@@ -1,0 +1,37 @@
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+:SSH - [0:0]
+:SSHATTACK - [0:0]
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+
+# ping
+-A INPUT -i ppp+ -p tcp --syn -m limit --limit 1/s -j ACCEPT
+#-A INPUT -p icmp -j ACCEPT
+-A INPUT -i ppp+ -p icmp --icmp-type echo-request -m limit --limit 1/s -j ACCEPT
+
+# smtp
+-A INPUT -p tcp -m state --state NEW --dport 25 -m limit --limit 12/m --limit-burst 100 -j ACCEPT
+
+# www
+-A INPUT -p tcp -m state --state NEW -m multiport -m tcp --dports 80,443 -j ACCEPT
+
+# jabber
+-A INPUT -p tcp -m state --state NEW -m multiport -m tcp --dports 5222,5269,5280 -j ACCEPT
+
+# ssh
+-A INPUT -p tcp -m state --state NEW -m multiport -m tcp --dports 22,22022 -j SSH
+-A SSH -m recent --name sshbadcon --rcheck --seconds 600 -j REJECT
+-A SSH -m recent --name sshcon --rcheck --seconds 60 --hitcount 5 -j SSHATTACK
+-A SSH -m recent --name sshcon --set
+-A SSH -j ACCEPT
+-A SSHATTACK -m recent --name sshbadcon --set
+-A SSHATTACK -j REJECT
+
+# reject
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+
+COMMIT
