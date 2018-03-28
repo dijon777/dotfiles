@@ -40,9 +40,10 @@ Hostname        10.101.2.16
 ProxyCommand    ssh h59 -W %h:%p server
 User            root
 
-#incident-st
+#incident-st(139.59.236.107)
 Host inc-st
 Hostname        inctest.qpit.me
+Port            22022
 IdentityFile    ~/.ssh/matsu.id_dsa
 User            root
 
@@ -92,6 +93,11 @@ Host gaia
 Hostname        gaia.huhs.ac.jp
 IdentityFile    ~/.ssh/matsu.id_dsa
 User btend
+
+Host food
+Hostname        128.199.166.53
+IdentityFile    ~/.ssh/matsu.id_dsa
+User root
 
 # --- Sourcetree Generated ---
 Host dijon777-GitHub
