@@ -21,6 +21,14 @@
 # jabber
 -A INPUT -p tcp -m state --state NEW -m multiport -m tcp --dports 5222,5269,5280 -j ACCEPT
 
+# sip
+-A INPUT -p tcp -m tcp --dport 5060 -j ACCEPT
+-A INPUT -p udp -m udp --dport 5060 -j ACCEPT
+-A INPUT -p udp -m udp --dport 10000:20000 -j ACCEPT
+
+# ldap
+-A INPUT -p tcp --dport 389 -j ACCEPT
+
 # ssh
 -A INPUT -p tcp -m state --state NEW -m multiport -m tcp --dports 22,22022 -j SSH
 -A SSH -m recent --name sshbadcon --rcheck --seconds 600 -j REJECT
