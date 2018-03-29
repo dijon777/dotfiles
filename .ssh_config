@@ -42,8 +42,8 @@ Hostname        10.101.2.16
 ProxyCommand    ssh h59 -W %h:%p server
 User            root
 
-#incident-st(139.59.236.107)
-Host inc-st
+#inctest.qpit.me(139.59.236.107)
+Host sinc
 Hostname        inctest.qpit.me
 Port            22022
 IdentityFile    ~/.ssh/matsu.id_dsa
@@ -74,13 +74,17 @@ Port            22022
 IdentityFile    ~/.ssh/matsu.id_dsa
 User sixp
 
+#epl.qpit.me
 Host epl
 Hostname        139.59.229.96
+Port            22022
 IdentityFile    ~/.ssh/matsu.id_dsa
 User root
 
+#lrs.qpit.me
 Host lrs
 Hostname        188.166.180.9
+Port            22022
 IdentityFile    ~/.ssh/matsu.id_dsa
 User root
 
@@ -89,8 +93,17 @@ Hostname        gaia.huhs.ac.jp
 IdentityFile    ~/.ssh/matsu.id_dsa
 User btend
 
+#food.qpit.me
 Host food
 Hostname        128.199.166.53
+Port            22022
+IdentityFile    ~/.ssh/matsu.id_dsa
+User root
+
+#dist.qpit.me
+Host dist
+Hostname        167.99.66.176
+Port            22022
 IdentityFile    ~/.ssh/matsu.id_dsa
 User root
 
