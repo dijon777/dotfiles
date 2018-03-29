@@ -4,11 +4,13 @@ UseKeychain yes
 
 Host bt
 Hostname        160.16.102.219
+Port            22022
 IdentityFile    ~/.ssh/matsu.id_dsa
 User wspace
 
 Host sbt
 Hostname        128.199.250.79
+Port            22022
 IdentityFile    ~/.ssh/matsu.id_dsa
 User wspace
 
@@ -66,16 +68,9 @@ Host hapy
 Hostname        hapyson.sakura.ne.jp
 User            hapyson
 
-#gcloud
-Host cho-st
-Hostname        104.155.234.100
-Port            22
-ProxyCommand    ssh 188 -W %h:%p server
-IdentityFile    ~/.ssh/matsu.id_dsa
-User            matsu
-
 Host sixp
 Hostname        128.199.169.103
+Port            22022
 IdentityFile    ~/.ssh/matsu.id_dsa
 User sixp
 
