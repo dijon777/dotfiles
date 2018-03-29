@@ -37,13 +37,13 @@ ProxyCommand    ssh h59 -W %h:%p server
 User            matsu
 
 #incident
-Host inc
+Host inc-hmd
 Hostname        10.101.2.16
 ProxyCommand    ssh h59 -W %h:%p server
 User            root
 
 #inctest.qpit.me(139.59.236.107)
-Host sinc
+Host inc
 Hostname        inctest.qpit.me
 Port            22022
 IdentityFile    ~/.ssh/matsu.id_dsa
@@ -105,6 +105,11 @@ Host dist
 Hostname        167.99.66.176
 Port            22022
 IdentityFile    ~/.ssh/matsu.id_dsa
+User root
+
+#distributor
+Host dist-hmd
+Hostname        10.102.168.128
 User root
 
 # --- Sourcetree Generated ---
