@@ -9,7 +9,12 @@ alias g='git'
 alias pwbt='echo "cxP97Bt" | pbcopy'
 alias pwha='echo "pbv2eetmb2" | pbcopy'
 
-alias gcver='git commit -m "バージョン変更"'
+alias gco="git checkout"
+alias gst="git status"
+alias gciver='git commit -m "バージョン変更"'
+alias gci="git commit -m"
+alias gdi="git diff"
+alias gbr="git branch"
 
 alias tmux='tmux -u'
 alias t='tmux'
@@ -21,5 +26,6 @@ fi
 
 alias say='say -v Samantha' # 日本語は -v Kyoko
 alias psay='pbpaste | say -v Samantha'
+alias dmm='cd ~/Projects/Btend/src/dmm_lesson/;/usr/local/bin/python3 ./book.py &' #
 
 alias lsapp="ps aux | grep -v grep | grep Applications | grep -o -e 'MacOS\/.*' | awk '{print \$1}' | sed -e 's/MacOS\///'"

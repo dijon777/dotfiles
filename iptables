@@ -15,11 +15,14 @@
 # smtp
 -A INPUT -p tcp -m state --state NEW --dport 25 -m limit --limit 12/m --limit-burst 100 -j ACCEPT
 
+# proxy
+-A INPUT -p tcp -m state --state NEW --dport 22028 -m limit --limit 12/m --limit-burst 100 -j ACCEPT
+
 # www
 -A INPUT -p tcp -m state --state NEW -m multiport -m tcp --dports 80,443 -j ACCEPT
 
 # jabber
--A INPUT -p tcp -m state --state NEW -m multiport -m tcp --dports 5222,5269,5280 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m multiport -m tcp --dports 5222,5269,5280,5281 -j ACCEPT
 
 # sip
 -A INPUT -p tcp -m tcp --dport 5060 -j ACCEPT

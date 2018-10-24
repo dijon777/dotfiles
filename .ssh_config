@@ -109,7 +109,8 @@ User root
 
 #distributor
 Host dist-hmd
-Hostname        10.102.168.128
+#Hostname        10.102.168.128
+Hostname        10.102.159.7
 User root
 
 # --- Sourcetree Generated ---
