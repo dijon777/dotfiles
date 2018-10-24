@@ -15,6 +15,8 @@ alias gciver='git commit -m "バージョン変更"'
 alias gci="git commit -m"
 alias gdi="git diff"
 alias gbr="git branch"
+alias gpush="git push"
+alias gpull="git pull"
 
 alias tmux='tmux -u'
 alias t='tmux'
