@@ -10,11 +10,15 @@ alias pwbt='echo "cxP97Bt" | pbcopy'
 alias pwha='echo "pbv2eetmb2" | pbcopy'
 
 alias gco="git checkout"
+alias gad="git add"
 alias gst="git status"
 alias gciver='git commit -m "バージョン変更"'
 alias gci="git commit -m"
 alias gdi="git diff"
 alias gbr="git branch"
+alias gloone="git log --oneline"
+alias gloline="git log --word-diff"
+alias glost="git log --stat"
 alias gpush="git push"
 alias gpull="git pull"
 
