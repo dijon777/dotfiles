@@ -16,6 +16,7 @@ alias gciver='git commit -m "バージョン変更"'
 alias gci="git commit -m"
 alias gdi="git diff"
 alias gbr="git branch"
+alias glo="git log"
 alias gloone="git log --oneline"
 alias gloline="git log --word-diff"
 alias glost="git log --stat"
